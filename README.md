@@ -45,11 +45,28 @@ This editor uses Y.js for collaboration. To enable real-time updates:
 
 1. Set up a WebSocket server with y-websocket.
 2. Configure the Collaboration extension in the editor.
+
 ## 📦 Technologies
 - [React](https://reactjs.org/)
 - [Tiptap](https://github.com/ueberdosis/tiptap)
 - [Y.js](https://github.com/yjs/yjs)
 - [Mantine UI](https://mantine.dev/)
 - [Jotai](https://jotai.org/)
+
+## 🙌 Contributing
+1. Fork the repository
+2. Create a new branch
+```bash
+git checkout -b feature/your-feature
+```
+3. Commit your changes
+```bash
+git commit -m "Add your message"
+```
+4. Push to the branch
+```bash
+git push origin feature/your-feature
+```
+5. Open a pull request.
 
 #### ⭐ Enjoy crafting with your Notion-like editor!
