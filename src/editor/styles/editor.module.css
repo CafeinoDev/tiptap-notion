@@ -1,0 +1,11 @@
+.editor {
+    height: 100%;
+    padding: 8px 20px;
+    margin: 64px auto;
+
+    @media print {
+        padding: 0;
+        margin: 0;
+    }
+}
+
