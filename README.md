@@ -1,50 +1,55 @@
-# React + TypeScript + Vite
+# 📝 Tiptap Notion-Like Editor
+✨ Features:
+- 📄 Rich text editing with Notion-style blocks.
+- 🤝 Real-time collaboration using Y.js.
+- 🛠️ Extensible architecture powered by Tiptap.
+- 🌟 Minimalistic and user-friendly design.
+- 📦 Easy integration into any web app.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A Notion-inspired editor built with **Tiptap** and **Y.js** to deliver a seamless and collaborative writing experience.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 📄 **Rich Text Editing**: Supports Notion-style blocks like headings, lists, and code blocks.
+- 🤝 **Real-Time Collaboration**: Powered by **Y.js** for seamless collaborative editing.
+- 🛠️ **Extensible Architecture**: Add custom Tiptap extensions to suit your needs.
+- 🌟 **User-Friendly Design**: Minimalistic and distraction-free interface.
+- 📦 **Easy Integration**: Ready to drop into your web app.
 
-## Expanding the ESLint configuration
+## 📚 Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/CafeinoDev/tiptap-notion.git
+   cd tiptap-notion
+   ```
 
-- Configure the top-level `parserOptions` property like this:
+2. Install dependencies:
+   ```bash
+   # npm
+   npm install
+   # or bun
+   bun install
+   ```
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+3. Start the development server:
+   ```bash
+   # npm
+   npm run dev
+   # or bun
+   bun dev
+   ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## 🤝 Collaboration Setup
+This editor uses Y.js for collaboration. To enable real-time updates:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+1. Set up a WebSocket server with y-websocket.
+2. Configure the Collaboration extension in the editor.
+## 📦 Technologies
+- [React](https://reactjs.org/)
+- [Tiptap](https://github.com/ueberdosis/tiptap)
+- [Y.js](https://github.com/yjs/yjs)
+- [Mantine UI](https://mantine.dev/)
+- [Jotai](https://jotai.org/)
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+#### ⭐ Enjoy crafting with your Notion-like editor!
