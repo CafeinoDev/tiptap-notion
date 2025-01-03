@@ -61,57 +61,13 @@ const TEXT_COLORS: BubbleColorMenuItem[] = [
     },
 ];
 
-// TODO: handle dark mode
-const HIGHLIGHT_COLORS: BubbleColorMenuItem[] = [
-    {
-        name: "Default",
-        color: "",
-    },
-    {
-        name: "Blue",
-        color: "#c1ecf9",
-    },
-    {
-        name: "Green",
-        color: "#acf79f",
-    },
-    {
-        name: "Purple",
-        color: "#f6f3f8",
-    },
-    {
-        name: "Red",
-        color: "#fdebeb",
-    },
-    {
-        name: "Yellow",
-        color: "#fbf4a2",
-    },
-    {
-        name: "Orange",
-        color: "#faebdd",
-    },
-    {
-        name: "Pink",
-        color: "#faf1f5",
-    },
-    {
-        name: "Gray",
-        color: "#f1f1ef",
-    },
-];
-
 export const ColorSelector: FC<ColorSelectorProps> = ({
     editor,
     isOpen,
     setIsOpen,
 }) => {
     const activeColorItem = TEXT_COLORS.find(({ color }) =>
-        editor.isActive("textStyle", { color }),
-    );
-
-    const activeHighlightItem = HIGHLIGHT_COLORS.find(({ color }) =>
-        editor.isActive("highlight", { color }),
+        editor?.isActive("textStyle", { color }),
     );
 
     return (
@@ -149,19 +105,22 @@ export const ColorSelector: FC<ColorSelectorProps> = ({
                                 justify="left"
                                 fullWidth
                                 rightSection={
-                                    editor.isActive("textStyle", { color }) && (
+                                    editor?.isActive("textStyle", { color }) && (
                                         <IconCheck style={{ width: rem(16) }} />
                                     )
                                 }
                                 onClick={() => {
-                                    editor.commands.unsetColor();
-                                    name !== "Default" &&
-                                        editor
-                                            .chain()
-                                            .focus()
-                                            .setColor(color || "")
-                                            .run();
-                                    setIsOpen(false);
+                                    if (editor) {
+                                        editor.commands.unsetColor();
+                                        if (name !== "Default") {
+                                            editor
+                                                .chain()
+                                                .focus()
+                                                .setColor(color || "")
+                                                .run();
+                                        }
+                                        setIsOpen(false);
+                                    }
                                 }}
                                 style={{ border: "none" }}
                             >

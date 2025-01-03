@@ -1,4 +1,3 @@
-import { ISpace } from "@/features/space/types/space.types.ts";
 
 export interface IPage {
   id: string;
@@ -19,7 +18,6 @@ export interface IPage {
   deletedAt: Date;
   position: string;
   hasChildren: boolean;
-  space: Partial<ISpace>;
 }
 
 export interface IMovePage {

@@ -8,7 +8,7 @@ export function formatMemberCount(memberCount: number): string {
 
 export function extractPageSlugId(input: string): string {
     if (!input) {
-        return undefined;
+        return "";
     }
     const parts = input.split("-");
     return parts.length > 1 ? parts[parts.length - 1] : input;
@@ -58,7 +58,7 @@ export async function svgStringToFile(
 // based on: https://developer.mozilla.org/en-US/docs/Glossary/Base64
 function decodeBase64(base64: string): string {
     // convert string to bytes
-    const bytes = Uint8Array.from(atob(base64), (m) => m.codePointAt(0));
+    const bytes = Uint8Array.from(atob(base64), (m) => m.codePointAt(0)!);
     // properly decode bytes to UTF-8 encoded string
     return new TextDecoder().decode(bytes);
 }

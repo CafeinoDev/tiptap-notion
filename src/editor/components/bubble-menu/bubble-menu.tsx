@@ -36,32 +36,32 @@ export const EditorBubbleMenu: FC<EditorBubbleMenuProps> = (props) => {
     const items: BubbleMenuItem[] = [
         {
             name: "bold",
-            isActive: () => props.editor.isActive("bold"),
-            command: () => props.editor.chain().focus().toggleBold().run(),
+            isActive: () => !!props.editor && props.editor.isActive("bold"),
+            command: () => !!props.editor && props.editor.chain().focus().toggleBold().run(),
             icon: IconBold,
         },
         {
             name: "italic",
-            isActive: () => props.editor.isActive("italic"),
-            command: () => props.editor.chain().focus().toggleItalic().run(),
+            isActive: () => !!props.editor && props.editor.isActive("italic"),
+            command: () => !!props.editor && props.editor.chain().focus().toggleItalic().run(),
             icon: IconItalic,
         },
         {
             name: "underline",
-            isActive: () => props.editor.isActive("underline"),
-            command: () => props.editor.chain().focus().toggleUnderline().run(),
+            isActive: () => !!props.editor && props.editor.isActive("underline"),
+            command: () => !!props.editor && props.editor.chain().focus().toggleUnderline().run(),
             icon: IconUnderline,
         },
         {
             name: "strike",
-            isActive: () => props.editor.isActive("strike"),
-            command: () => props.editor.chain().focus().toggleStrike().run(),
+            isActive: () => !!props.editor && props.editor.isActive("strike"),
+            command: () => !!props.editor && props.editor.chain().focus().toggleStrike().run(),
             icon: IconStrikethrough,
         },
         {
             name: "code",
-            isActive: () => props.editor.isActive("code"),
-            command: () => props.editor.chain().focus().toggleCode().run(),
+            isActive: () => !!props.editor && props.editor.isActive("code"),
+            command: () => !!props.editor && props.editor.chain().focus().toggleCode().run(),
             icon: IconCode,
         },
     ];

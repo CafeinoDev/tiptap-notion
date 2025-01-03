@@ -21,11 +21,13 @@ export default function MathInlineView(props: NodeViewProps) {
         container: HTMLDivElement | null,
     ) => {
         try {
-            katex.render(katexString, container);
+            katex.render(katexString, container!);
             setError(null);
         } catch (e) {
             //console.error(e);
-            setError(e.message);
+            if (e instanceof Error) {
+                setError(e.message);
+            }
         }
     };
 

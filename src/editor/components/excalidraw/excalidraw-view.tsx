@@ -32,7 +32,7 @@ export default function ExcalidrawView(props: NodeViewProps) {
     const { src, title, width, attachmentId } = node.attrs;
 
     const [excalidrawAPI, setExcalidrawAPI] =
-        useState<ExcalidrawImperativeAPI>(null);
+        useState<ExcalidrawImperativeAPI | null>(null);
     const [excalidrawData, setExcalidrawData] = useState<any>(null);
     const [opened, { open, close }] = useDisclosure(false);
     const computedColorScheme = useComputedColorScheme();
@@ -91,7 +91,7 @@ export default function ExcalidrawView(props: NodeViewProps) {
 
         const pageId = editor.storage?.pageId;
 
-        let attachment: IAttachment = null;
+        let attachment: IAttachment | null = null;
         if (attachmentId) {
             attachment = await uploadFile(excalidrawSvgFile, pageId, attachmentId);
         } else {

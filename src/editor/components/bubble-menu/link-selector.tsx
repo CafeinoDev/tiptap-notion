@@ -18,7 +18,7 @@ export const LinkSelector: FC<LinkSelectorProps> = ({
     const onLink = useCallback(
         (url: string) => {
             setIsOpen(false);
-            editor.chain().focus().setLink({ href: url }).run();
+            editor?.chain().focus().setLink({ href: url }).run();
         },
         [editor, setIsOpen],
     );

@@ -29,6 +29,7 @@ export const Editor = () => {
     const menuContainerRef = useRef(null);
 
 
+    // @ts-ignore
     const localProvider = useMemo(() => {
         const provider = new IndexeddbPersistence(documentName, ydoc);
 

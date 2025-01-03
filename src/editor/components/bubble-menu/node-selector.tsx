@@ -38,65 +38,65 @@ export const NodeSelector: FC<NodeSelectorProps> = ({
             name: "Text",
             icon: IconTypography,
             command: () =>
-                editor.chain().focus().toggleNode("paragraph", "paragraph").run(),
+                editor?.chain().focus().toggleNode("paragraph", "paragraph").run(),
             isActive: () =>
-                editor.isActive("paragraph") &&
-                !editor.isActive("bulletList") &&
-                !editor.isActive("orderedList"),
+                !!editor &&
+                editor?.isActive("paragraph") &&
+                !editor?.isActive("bulletList") &&
+                !editor?.isActive("orderedList"),
         },
         {
             name: "Heading 1",
             icon: IconH1,
-            command: () => editor.chain().focus().toggleHeading({ level: 1 }).run(),
-            isActive: () => editor.isActive("heading", { level: 1 }),
+            command: () => editor?.chain().focus().toggleHeading({ level: 1 }).run(),
+            isActive: () => !!editor && editor?.isActive("heading", { level: 1 }),
         },
         {
             name: "Heading 2",
             icon: IconH2,
-            command: () => editor.chain().focus().toggleHeading({ level: 2 }).run(),
-            isActive: () => editor.isActive("heading", { level: 2 }),
+            command: () => editor?.chain().focus().toggleHeading({ level: 2 }).run(),
+            isActive: () => !!editor && editor?.isActive("heading", { level: 2 }),
         },
         {
             name: "Heading 3",
             icon: IconH3,
-            command: () => editor.chain().focus().toggleHeading({ level: 3 }).run(),
-            isActive: () => editor.isActive("heading", { level: 3 }),
+            command: () => editor?.chain().focus().toggleHeading({ level: 3 }).run(),
+            isActive: () => !!editor && editor?.isActive("heading", { level: 3 }),
         },
         {
             name: "To-do List",
             icon: IconCheckbox,
-            command: () => editor.chain().focus().toggleTaskList().run(),
-            isActive: () => editor.isActive("taskItem"),
+            command: () => editor?.chain().focus().toggleTaskList().run(),
+            isActive: () => !!editor && editor?.isActive("taskItem"),
         },
         {
             name: "Bullet List",
             icon: IconList,
-            command: () => editor.chain().focus().toggleBulletList().run(),
-            isActive: () => editor.isActive("bulletList"),
+            command: () => editor?.chain().focus().toggleBulletList().run(),
+            isActive: () => !!editor && editor?.isActive("bulletList"),
         },
         {
             name: "Numbered List",
             icon: IconListNumbers,
-            command: () => editor.chain().focus().toggleOrderedList().run(),
-            isActive: () => editor.isActive("orderedList"),
+            command: () => editor?.chain().focus().toggleOrderedList().run(),
+            isActive: () => !!editor && editor?.isActive("orderedList"),
         },
         {
             name: "Blockquote",
             icon: IconBlockquote,
             command: () =>
-                editor
-                    .chain()
+                editor?.chain()
                     .focus()
                     .toggleNode("paragraph", "paragraph")
                     .toggleBlockquote()
                     .run(),
-            isActive: () => editor.isActive("blockquote"),
+            isActive: () => !!editor && editor?.isActive("blockquote"),
         },
         {
             name: "Code",
             icon: IconCode,
-            command: () => editor.chain().focus().toggleCodeBlock().run(),
-            isActive: () => editor.isActive("codeBlock"),
+            command: () => editor?.chain().focus().toggleCodeBlock().run(),
+            isActive: () => !!editor && editor?.isActive("codeBlock"),
         },
     ];
 

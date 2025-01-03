@@ -11,10 +11,11 @@ api.interceptors.request.use(
     (config) => {
         const tokenData = Cookies.get("authTokens");
 
-        let accessToken: string;
+        let accessToken: string = '';
         try {
             accessToken = tokenData && JSON.parse(tokenData)?.accessToken;
         } catch (err) {
+            // @ts-ignore
             console.log("invalid authTokens:", err.message);
             Cookies.remove("authTokens");
         }

@@ -37,7 +37,7 @@ export default function EmbedView(props: NodeViewProps) {
     async function onSubmit(data: { url: string }) {
         if (provider) {
             const embedProvider = getEmbedProviderById(provider);
-            if (embedProvider.regex.test(data.url)) {
+            if (embedProvider?.regex.test(data.url)) {
                 updateAttributes({ src: data.url });
             } else {
                 notifications.show({
@@ -84,7 +84,7 @@ export default function EmbedView(props: NodeViewProps) {
                                 </ActionIcon>
 
                                 <Text component="span" size="lg" c="dimmed">
-                                    Embed {getEmbedProviderById(provider).name}
+                                    Embed {getEmbedProviderById(provider)!.name}
                                 </Text>
                             </div>
                         </Card>
@@ -92,7 +92,7 @@ export default function EmbedView(props: NodeViewProps) {
                     <Popover.Dropdown bg="var(--mantine-color-body)">
                         <form onSubmit={embedForm.onSubmit(onSubmit)}>
                             <FocusTrap active={true}>
-                                <TextInput placeholder={`Enter ${getEmbedProviderById(provider).name} link to embed`}
+                                <TextInput placeholder={`Enter ${getEmbedProviderById(provider)!.name} link to embed`}
                                     key={embedForm.key('url')}
                                     {...embedForm.getInputProps('url')}
                                     data-autofocus

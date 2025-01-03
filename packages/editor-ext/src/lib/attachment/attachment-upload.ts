@@ -19,7 +19,7 @@ export const AttachmentUploadPlugin = ({
       apply(tr, set) {
         set = set.map(tr.mapping, tr.doc);
         // See if the transaction adds or removes any placeholders
-        //@-ts-expect-error - not yet sure what the type I need here
+        //@ts-ignore - not yet sure what the type I need here
         const action = tr.getMeta(this);
         if (action?.add) {
           const { id, pos, fileName } = action.add;

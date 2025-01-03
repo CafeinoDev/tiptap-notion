@@ -3,7 +3,7 @@ import {
     findParentNode,
     posToDOMRect,
 } from "@tiptap/react";
-import React, { useCallback } from "react";
+import { useCallback } from "react";
 import { sticky } from "tippy.js";
 import { Node as PMNode } from "prosemirror-model";
 import {

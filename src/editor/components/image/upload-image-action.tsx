@@ -11,6 +11,7 @@ export const uploadImageAction = handleImageUpload({
         } catch (err) {
             notifications.show({
                 color: "red",
+                // @ts-ignore
                 message: err?.response.data.message,
             });
             throw err;
@@ -20,10 +21,10 @@ export const uploadImageAction = handleImageUpload({
         if (!file.type.includes("image/")) {
             return false;
         }
-        if (file.size > getFileUploadSizeLimit()) {
+        if (file.size > getFileUploadSizeLimit()!) {
             notifications.show({
                 color: "red",
-                message: `File exceeds the ${formatBytes(getFileUploadSizeLimit())} attachment limit`,
+                message: `File exceeds the ${formatBytes(getFileUploadSizeLimit()!)} attachment limit`,
             });
             return false;
         }

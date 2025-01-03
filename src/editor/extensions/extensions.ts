@@ -1,3 +1,4 @@
+import type { Extension } from "@tiptap/react";
 import { StarterKit } from "@tiptap/starter-kit";
 import { Placeholder } from "@tiptap/extension-placeholder";
 import { TextAlign } from "@tiptap/extension-text-align";
@@ -96,6 +97,7 @@ export const mainExtensions = [
             if (node.type.name === "paragraph") {
                 return 'Write anything. Enter "/" for commands';
             }
+            return "";
         },
         includeChildren: true,
         showOnlyWhenEditable: true,
@@ -179,4 +181,4 @@ export const mainExtensions = [
     Embed.configure({
         view: EmbedView,
     })
-] as any;
+] as Extension[];

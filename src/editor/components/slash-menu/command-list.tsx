@@ -17,8 +17,6 @@ import clsx from "clsx";
 const CommandList = ({
     items,
     command,
-    editor,
-    range,
 }: {
     items: SlashMenuGroupedItemsType;
     command: any;

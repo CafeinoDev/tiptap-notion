@@ -29,7 +29,7 @@ export function getCollaborationUrl(): string {
 
     let url = getAppUrl();
     if (import.meta.env.DEV) {
-        url = process.env.APP_URL;
+        url = process.env.APP_URL!;
     }
 
     const wsProtocol = url.startsWith('https') ? 'wss' : 'ws';
@@ -65,6 +65,6 @@ export function getDrawioUrl() {
     return getConfigValue("DRAWIO_URL", "https://embed.diagrams.net");
 }
 
-function getConfigValue(key: string, defaultValue: string = undefined) {
+function getConfigValue(key: string, defaultValue: string = '') {
     return window.CONFIG?.[key] || process?.env?.[key] || defaultValue;
 }
