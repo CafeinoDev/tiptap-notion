@@ -8,6 +8,7 @@ export default defineConfig(({ mode }) => {
     const { APP_URL, FILE_UPLOAD_SIZE_LIMIT, DRAWIO_URL } = loadEnv(mode, envPath, "");
 
     return {
+        base: '/tiptap-notion/',
         define: {
             "process.env": {
                 APP_URL,
